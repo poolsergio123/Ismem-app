@@ -1,0 +1,47 @@
+<style>
+  .estaaaa{
+  color: #0054e9 !important;
+}
+</style>
+<ion-header [translucent]="true">
+  <ion-toolbar style="text-align: center;">
+    <ion-title>Iniciar Sesion</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Account</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+
+  <ion-content>
+    <img class="centered-image" src="../../assets/ismem.png" alt="Descripción de la imagen" />
+    <ion-item style="padding-top: 15px;">
+      <ion-input
+        label="Correo Electronico"
+        labelPlacement="stacked"
+        [(ngModel)]="email"
+        [clearOnEdit]="true"
+        placeholder="Introduce tu correo."
+      >
+      </ion-input>
+
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating"  class="estaaaa" style="color: #000000; " id="asd" >Contraseña</ion-label>
+      <ion-input type="password" [(ngModel)]="contrasena"  placeholder="Introduce tu contraseña." value="">
+        <ion-input-password-toggle slot="end"></ion-input-password-toggle>
+      </ion-input>
+    </ion-item>
+    <ion-button (click)="login()">Iniciar sesión</ion-button>
+
+
+
+  </ion-content>
+
+
+</ion-content>
