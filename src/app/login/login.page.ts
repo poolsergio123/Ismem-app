@@ -23,6 +23,8 @@ export class LoginPage implements OnInit {
       if (respo.user) {
         this.authService.setLoggedIn(true); // Marca como autenticado
         this.router.navigate(['/folder/inbox']); // Redirigir al login si no está autenticado
+        this.contrasena="";
+        this.email="";
         console.log("Login exitoso:", respo.user);
       }
     } catch (err) {
