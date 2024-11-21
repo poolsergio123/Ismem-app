@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import {AngularFireDatabase} from '@angular/fire/compat/database';
 
 @Component({
   selector: 'app-chat',
@@ -7,11 +7,49 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./chat.page.scss']
 
 })
-export class ChatPage implements OnInit {
+export class ChatPage  {
+  messages:any =[];
+  constructor(private db: AngularFireDatabase) {
+    this.db.list("chats/chat1",ref => ref.orderByChild('hora')).valueChanges().subscribe(data=>{
+      console.log(data)
+      this.messages = data;
+    })
+
+   }
+
    message: string = ''; // Mensaje actual
    msgerForm = document.querySelector(".msger-inputarea");
    msgerInput = document.querySelector(".msger-input");
-   msgerChat = document.querySelector(".msger-chat");
+   msgerChat = document!.querySelector(".msger-chat");
+
+   @ViewChild('inputArea') inputArea!: ElementRef<HTMLInputElement>;
+
+  //  onSubmit(): void {
+  //   if (!this.message.trim()) return;
+  //   const time = new Date().toLocaleDateString([],{hour:'2-digit',minute:'2-digit'}); // No enviar si el mensaje está vacío
+  //   this.messages.push({text: this.message,sent:true,time});
+  //   this.message='';
+  //   // this.appendMessage(this.PERSON_NAME, this.PERSON_IMG, 'right', this.message);
+  //   // this.message = '';  // Limpiar el input
+  //   // this.botResponse();
+  // }
+  sendMessage(){
+    if (this.message.trim()!='') {
+      const currentdate=new Date();
+      let meessage={
+        "hora":currentdate.toISOString().slice(0,19).replace("T"," "),
+        "usuario":"Paul",
+        "mensaje":this.message
+      }
+      console.log(meessage.hora);
+      this.db.list("chats/chat1").push(meessage).then(()=>{
+        console.info("Genial!");
+      })
+    };
+  this.message='';
+  }
+
+
 
    BOT_MSGS: string[] = [
      "Hi, how are you?",
@@ -34,16 +72,14 @@ export class ChatPage implements OnInit {
 //     this.message = ''; // Limpiar el input
 //     this.botResponse();
 //   }
-      onSubmit(form: any) {
-        if (!this.message.trim()) return;
-                this.appendMessage(this.PERSON_NAME, this.PERSON_IMG, 'right', this.message);
-        this.message = ''; // Limpiar el input
-        this.botResponse();
-      }
+      // onSubmit(form: any) {
+      //   if (!this.message.trim()) return;
+      //           this.appendMessage(this.PERSON_NAME, this.PERSON_IMG, 'right', this.message);
+      //   this.message = ''; // Limpiar el input
+      //   this.botResponse();
+      // }
 
-   constructor() { }
-   ngOnInit() {
-   }
+
 
 // // Respuesta del bot
   botResponse(): void {
@@ -94,8 +130,8 @@ export class ChatPage implements OnInit {
        </div>
      </div>
    `;
-   this.msgerChat?.insertAdjacentHTML("beforeend", msgHTML);
-   this.msgerChat!.scrollTop += 500;
+   document.querySelector(".msger-chat")!.insertAdjacentHTML("beforeend", msgHTML);
+   document.querySelector(".msger-chat")!.scrollTop+=500;
  }
 
 

@@ -3,15 +3,15 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  firebase:{
-    apiKey: "AIzaSyBzqNWTcbLzAFknRmOwCrQfCD7NjI1SqOk",
-    authDomain: "ismemapp.firebaseapp.com",
-    projectId: "ismemapp",
-    storageBucket: "ismemapp.firebasestorage.app",
-    messagingSenderId: "808568547142",
-    appId: "1:808568547142:web:2bad918e252ff61a926747",
-    measurementId: "G-BT9M2QMSK0"
-    },
+  firebase: {
+    apiKey: "AIzaSyDOVyERkdJV0ytMejPRq2766Msx9xLD-Ig",
+    authDomain: "ismem-app.firebaseapp.com",
+    projectId: "ismem-app",
+    storageBucket: "ismem-app.firebasestorage.app",
+    messagingSenderId: "872564974796",
+    appId: "1:872564974796:web:27d602175ec1c67bb08e69",
+    measurementId: "G-20YSX0H2CH"
+  },
     production: false
 };
 
