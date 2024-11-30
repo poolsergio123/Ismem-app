@@ -1,5 +1,6 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { ChatComponent } from '../components/chat/chat.component';
 
 @Component({
   selector: 'app-folder',

@@ -7,14 +7,19 @@ import { IonicModule } from '@ionic/angular';
 import { FolderPageRoutingModule } from './folder-routing.module';
 
 import { FolderPage } from './folder.page';
+import { ChatComponent } from '../components/chat/chat.component';
+import { NoticiasComponent } from '../components/noticias/noticias.component';
+import { EventosComponent } from '../components/eventos/eventos.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormatDatePipe } from '../format-date.pipe';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    FolderPageRoutingModule
+    FolderPageRoutingModule,HttpClientModule,FormatDatePipe
   ],
-  declarations: [FolderPage]
+  declarations: [FolderPage,ChatComponent,NoticiasComponent,EventosComponent]
 })
 export class FolderPageModule {}

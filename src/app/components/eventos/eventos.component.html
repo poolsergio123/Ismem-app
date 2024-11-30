@@ -1,0 +1,16 @@
+<p *ngFor="let evento of eventos">
+  {{evento.titulo}}
+</p>
+
+<ion-card style="text-align: center; margin-bottom: 10px;" *ngFor="let evento of eventos">
+  <img [src]="evento.imagen_url ? 'data:image/png;base64, '+evento.imagen_url:'https://ionicframework.com/docs/img/demos/card-media.png'" />
+  <ion-card-header>
+    <ion-card-title>{{evento.nombre}}</ion-card-title>
+    <ion-card-subtitle>Inicio: {{evento.fecha_inicio | formatDate}}</ion-card-subtitle>
+    <ion-card-subtitle>Fin: {{evento.fecha_fin | formatDate}}</ion-card-subtitle>
+  </ion-card-header>
+
+  <ion-card-content>
+    {{evento.descripcion}}
+  </ion-card-content>
+</ion-card>

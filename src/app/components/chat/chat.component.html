@@ -1,0 +1,40 @@
+<div class="msger" style="margin: 0px;">
+
+  <header class="msger-header">
+    <div class="msger-header-title">
+      <i class="fas fa-comment-alt"></i> Chat Ismem
+    </div>
+    <div class="msger-header-options">
+      <span><i class="fas fa-cog"></i></span>
+    </div>
+  </header>
+
+  <main class="msger-chat" >
+    <div *ngFor="let message of messages" [class]="message.usuario.toLowerCase() == 'paul' ? 'msg right-msg':'msg left-msg'" [ngClass]="{'sent': message.sent, 'received': !message.sent}">
+        <div
+          class="msg-img"
+          style="background-image: url(https://image.flaticon.com/icons/svg/327/327779.svg)"
+        ></div>
+
+        <div class="msg-bubble">
+          <div class="msg-info">
+            <div class="msg-info-name">{{ message.usuario }}</div>
+            <div class="msg-info-time">{{ message.hora }}</div>
+          </div>
+
+          <div class="msg-text">
+            {{ message.mensaje }}
+          </div>
+      </div>
+    </div>
+
+
+
+  </main>
+
+  <form class="msger-inputarea" (ngSubmit)="sendMessage()">
+    <textarea class="msger-input" [(ngModel)]="message" name="message"></textarea>
+    <button type="submit">Enviar</button>
+  </form>
+</div>
+

@@ -7,15 +7,15 @@ import { Router } from '@angular/router';
 })
 export class AppComponent {
   public appPages = [
-    { title: 'Conversaciones', url: '/folder/inbox', icon: 'mail' },
-    { title: 'Outbox', url: '/folder/outbox', icon: 'paper-plane' },
-    { title: 'Favorites', url: '/folder/favorites', icon: 'heart' },
-    { title: 'Archived', url: '/folder/archived', icon: 'archive' },
-    { title: 'Trash', url: '/folder/trash', icon: 'trash' },
-    { title: 'Registrar', url: '/registro', icon: 'person' },
-    { title: 'Cerrar Sesion', url: '/login', icon: 'back' },
+    { title: 'Conversaciones', url: '/folder/chat', icon: 'mail' },
+    { title: 'Noticias', url: '/folder/noticias', icon: 'newspaper' },
+    { title: 'Eventos', url: '/folder/eventos', icon: 'calendar-number' },
+    { title: 'Horarios', url: '/folder/horarios', icon: 'time' },
+    { title: 'Notas', url: '/folder/notas', icon: 'calculator' },
+    { title: 'Estudiantes', url: '/folder/estudiantes', icon: 'people' },
+    { title: 'Cerrar Sesion', url: '/login', icon: 'arrow-back' },
   ];
-  public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
+  // public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
 
   public isMenuDisabled: boolean = false;
 
