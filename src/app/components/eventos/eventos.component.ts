@@ -16,8 +16,6 @@ export class EventosComponent  {
       console.log("Datos",data);
       this.eventos =data;
     })
-
-
   }
 
 

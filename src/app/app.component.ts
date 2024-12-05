@@ -13,6 +13,7 @@ export class AppComponent {
     { title: 'Horarios', url: '/folder/horarios', icon: 'time' },
     { title: 'Notas', url: '/folder/notas', icon: 'calculator' },
     { title: 'Estudiantes', url: '/folder/estudiantes', icon: 'people' },
+    { title: 'Clases', url: '/folder/clase', icon: 'table' },
     { title: 'Cerrar Sesion', url: '/login', icon: 'arrow-back' },
   ];
   // public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];

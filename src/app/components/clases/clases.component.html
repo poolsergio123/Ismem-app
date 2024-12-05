@@ -1,0 +1,18 @@
+<p *ngFor="let clase of clases">
+  {{clases.titulo}}
+</p>
+
+<ion-card style="text-align: center; margin-bottom: 10px;" *ngFor="let clase of clases">
+  <img [src]="clase.imagen_url ? 'data:image/png;base64, '+clase.imagen_url:'assets/pipipi.png'" />
+  <ion-card-header>
+    <ion-card-title>Ciclo: {{clase.ciclo}}</ion-card-title>
+    <ion-card-subtitle>Carrera: {{clase.carrera }}</ion-card-subtitle>
+    <ion-card-subtitle>Curso: {{clase.curso }}</ion-card-subtitle>
+    <ion-card-subtitle>Clase: {{clase.nombre_clase }}</ion-card-subtitle>
+    <ion-card-subtitle>Descripcion: {{clase.descripcion_clase }}</ion-card-subtitle>
+  </ion-card-header>
+
+  <ion-card-content>
+    {{clase.descripcion}}
+  </ion-card-content>
+</ion-card>

@@ -12,6 +12,7 @@ import { NoticiasComponent } from '../components/noticias/noticias.component';
 import { EventosComponent } from '../components/eventos/eventos.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormatDatePipe } from '../format-date.pipe';
+import { ClasesComponent } from '../components/clases/clases.component';
 
 @NgModule({
   imports: [
@@ -20,6 +21,6 @@ import { FormatDatePipe } from '../format-date.pipe';
     IonicModule,
     FolderPageRoutingModule,HttpClientModule,FormatDatePipe
   ],
-  declarations: [FolderPage,ChatComponent,NoticiasComponent,EventosComponent]
+  declarations: [FolderPage,ChatComponent,NoticiasComponent,EventosComponent,ClasesComponent]
 })
 export class FolderPageModule {}
